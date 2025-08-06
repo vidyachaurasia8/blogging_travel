@@ -1,0 +1,273 @@
+{% load static %}
+<html>
+
+<head>
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+  <style>
+
+    #menu {
+      background: transparent !important;
+    }
+    #menu ul li a {
+      color: white !important;
+    }
+    .bg-mycolor1 {
+      background: #F50057;
+    }
+    .bg-mycolor2 {
+      background: #6A1B9A;
+    }
+    .text-mycolor1 {
+      color: #AD1457;
+    }
+    .text-mycolor2 {
+      color: #4A148C;
+    }
+    .ic {
+      color: #F50057;
+      height: 28px;
+      width: 28px;
+      text-align: center;
+      line-height: 28px;
+      border: 1px solid#F50057;
+    }
+
+    .ic:hover {
+      transform: translateY(-5px);
+      transition: .1s;
+      background: #F50057;
+      color: white;
+    }
+    .footer{
+        min-height: 50px;
+        text-align: center;
+        list-style: 50px;
+        font-size: 80px;
+        color:white;
+        background:black;
+    }
+    .offcanvas-body ul li{
+      list-style-type: none;
+      padding:5px;
+      
+    }
+    .offcanvas-body ul li a{
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      
+    }
+    .dashic{
+      height: 50px;
+      width: 50px;
+      font-size: 25px ;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 40px;
+      padding:5px;
+    }
+    .dashcard:hover{
+      transform:scale(1.08);
+      transition: 2s;
+    }
+    .dashcard{
+      transition: 2s;
+    }
+    #dash a{
+      text-decoration: none;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!--start header-->
+    <div class="row header">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10 py-4">
+        <div class="row">
+          <div class="col-sm-3">
+            TECH<b class="text-mycolor1">HUB<i class="fa-solid fa-graduation-cap"></i></b>
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <i class="fa-solid fa-envelope ic "></i>
+              Mail Us</b><br />
+            vidya@gmail.com
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <i class="fa-solid fa-phone ic"></i>
+              Call Us</b><br />
+            5456465777
+          </div>
+          <div class="col-sm-2 pt-3">
+            <i class="fa-brands fa-square-facebook ic"></i>
+            <i class="fa-brands fa-square-youtube ic"></i>
+            <i class="fa-brands fa-instagram ic"></i>
+           
+          </div>
+          <div class="col-sm-3">
+            <!--user info-->
+
+             {% if request.session.email %}
+               <a href="/blogger/profile/" style="text-decoration:none;">
+             <div class="input-group">
+            
+              <span class="input-group-text p-0">
+             
+            <img src="/{{request.session.userpic}}" class="img-thumbnail rounded-circle" style="height: 60px;width: 60px;">
+            </span>
+           <span class="form-control"><b>{{request.session.name}}</b><br/>{{request.session.email}}</span>
+               
+               </div>
+               </a>
+            {% else %}
+             <img src="{% static 'images/user1.webp' %}" class="img-thumbnail" style="height: 40px;width: 40px;"/>
+            <b>guest@gmail.com</b>
+            {% endif %}
+             <!--end user info-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <!--end header-->
+
+  <!--start menu-->
+  <!-- <div class="row menu bg-mycolor1">
+    <div class="col-sm-8 mx-auto">
+
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                
+                <a class="nav-link active" aria-current="page" href="/index/">Home</a>
+                 <li class="nav-item">
+                <a class="nav-link" href="/package/">Package</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/login/">Login</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/register/">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/category/">Travelling</a>
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link" href="/aboutus/">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/services/">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/gallery/"> Picture Gallery</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/team/">Team</a>
+              </li>
+               
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact & Support</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Dropdown
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+
+
+
+
+    </div>
+  </div> -->
+  <!--end menu-->
+  <!--vertical menu start-->
+  <div class="row bg-mycolor1">
+    <div class="col-sm-12">
+  <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  <i class="fa-solid fa-bars"></i>
+</a>
+
+</div>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">TECHHUB</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body bg-mycolor1">
+    <div>
+      <ul>
+        <li><a href="/blogger/dashboard/"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+         <li><a href="/blogger/package/"><i class="fa-solid fa-house"></i> Traveling Package</a></li>
+          <li><a href="/blogger/myblogs/"><i class="fa-solid fa-house"></i> My Blogs</a></li>
+           <li><a href="/blogger/history/"><i class="fa-solid fa-product-hunt"></i> Booking History</a></li>
+            <li><a href="/blogger/profile/"><i class="fa-solid fa-house"></i> My Profile</a></li>
+             <li><a href="/blogger/logout/"><i class="fa-solid fa-power-off"></i> Logout</a></li>
+             
+
+      </ul>
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <!--vertical menu end-->
+  <div class="row">
+    <div class="col-sm-12" style="min-height: 450px;">
+        
+  {% block content %}
+  {% endblock %}
+     </div>
+
+  </div>
+  <div class="row footer" style="font-size:16px">
+    <div class="col-6">Developed By: Rovya</div>
+     <div class="col-6">&copy;Techpile Technology</div>
+  </div>
+  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>

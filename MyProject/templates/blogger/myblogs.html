@@ -1,0 +1,75 @@
+{% extends 'blogger_base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .form-control{
+        height: 60px;
+        margin-bottom:15px;
+        background: #ececec;
+
+    }
+</style>
+
+{% if not request.session.email %}
+<script>
+    alert('You have to login First..');location.href="/login/"
+</script>
+
+{% endif %}
+<div class="row">
+    <div class="col-sm-3">
+         <p class="fs-5 text-uppercase text-center mt-5">Book<b class="text-mycolor1"> Traveling Package</b></p>
+         {% if success %}
+                 <div class="alert alert-success">your blog posted successfully
+                    <span data-bs-dismiss="alert" class="float-end">X</span>
+                 </div>
+                 {% endif %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" class="form-control" placeholder="Blogs Title.." name="title"/>
+           <textarea name="info" class="form-control" placeholder="Blogs Information.." style="height: 200px;resize: none;"></textarea>
+            <input type="file" name="fu" class="form-control"/> 
+            <input type="text" name="city" class="form-control" placeholder="Blogs City"/>
+            <input type="submit" class="form-control"
+             style="background: #e4a11b !important;" value="Save"/>
+            
+            
+        </form>
+
+        </div>
+        <div class="col-sm-9" style="height: 800px; overflow:auto;">
+            {% for r in blogs %}
+         
+          <!--Category right start-->
+          <div class="card mb-5 border border-0 shadow-lg p-3">
+            <div class="row g-0">
+            <div class="col-sm-4">
+              <img src="/{{r.picture}}" class="img-fluid rounded-start cating" style="min-height: 300px;" alt="...">
+            </div>
+            <div class="col-sm-8">
+              <div class="card-body">
+                <img src="/{{r.user_pic}}" style="height: 80px;width:80px ;" class="img-thumbnail rounded-circle position-absolute top-0 start-50 translate-middle shadow-lg"/>
+                <h5 class="card-title pt-4">{{r.title}}</h5>
+                <p class="card-text">{{r.description}}</p>
+                <p class="card-text"><b>{{r.name}}</b>
+                 <span class="float-end">{{r.city}}</span>
+                 </p>
+                 <p class="card-text"><small class="text-body-secondary">
+                  <span class="bg-mycolor1 badge text-light"><b>Posted Date</b>{{r.posteddate}}</span>
+                 </small></p>
+
+              </div>
+            </div>
+            </div>
+          </div>
+        
+          <!--Category right end-->
+          {% endfor %}
+
+        </div>
+
+    
+</div>
+
+{% endblock %}

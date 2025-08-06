@@ -1,0 +1,55 @@
+{% extends 'blogger_base.html' %}
+{% load static %}
+{% block content %}
+
+<!--start page heading-->
+<hr class="w-25 mx-auto"/>
+
+<p class="text-center fs-3 mt-3">My<b class="text-mycolor1">Profile<i class="fa-solid fa-user fa-spin"></i>
+</b></p>
+<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corrupti at recusandae sed voluptate corporis<b class="text-mycolor1"></b></p>
+<hr class="w-50 mx=auto pb-5">
+
+<!--end page heading-->
+{% for r in pdata %}
+
+<div class="row mx-5 my-1">
+    
+    <div class="col-sm-10 shadow-lg my-4 mx-auto" style="min-height: 200px;position:relative;">
+        <img src="/{{r.picture}}"
+         class="rounded-circle border border-dark border-5 p-2 position-absolute top-0 start-50 translate-middle" 
+         style="height: 200px;width: 200px;"/><br/><br/><br/><br/>
+         <p class="fs-1 text-center fw-bold">{{r.name}}</p>
+         <p class="w-50 mx-auto">
+            <i class="fa-solid fa-phone ic"></i>{{r.mobile}}
+            <i class="fa-solid fa-envelope ic"></i>{{r.email}}
+            <i class="fa-solid fa-key ic"></i>{{r.password}}
+            <i class="fa-solid fa-map-marker ic"></i>{{r.address}}<br/>
+         </p>
+         <a href="#" class="bg-dark btn text-light d-block mx-auto w-25"><i class="fa-solid fa-pen-to-square"></i> UPDATE PROFILE</a>
+    </div>
+    </div>
+    <div class="row">
+        <!--start profile update-->
+        <div class="col-sm-6 mx-auto p-5 bg-light mb-3">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" value="{{r.name}}" required placeholder="Name" class="form-control mb-3 shadow-lg"/>
+            
+            <input type="number" name="mob" value="{{r.mobile}}" required placeholder="Mobile" class="form-control mb-3 shadow-lg"/>
+            <input type="password" value="{{r.password}}" name="passwd"  required placeholder="Password" class="form-control mb-3 shadow-lg"/>
+            <input type="file" name="fu" required class="form-control mb-3 shadow"/>
+
+            <textarea name="address" value="{{r.address}}" class="form-control mb-3 shadow-lg"></textarea>
+            <input type="submit" value="UPDATE" class="bg-mycolor1 btn form-control text-light" style="background: #e91e63 !important;"/>
+        </form>
+    </div>
+
+        <!--end profile update-->
+
+    </div>
+    {% endfor %}
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--start page heading-->
+<hr class="w-25 mx-auto"/>
+
+<p class="text-center fs-3 mt-3">Our<b class="text-mycolor1">Latest Package<i class="fa-solid fa-user fa-spin"></i>
+</b></p>
+<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corrupti at recusandae sed voluptate corporis<b class="text-mycolor1">Register</b></p>
+<hr class="w-50 mx=auto"/>
+
+<!--end page heading-->
+<div class="row">
+     {% for r in packages %}
+            <!--start package session-->
+            <div class="col-sm-3">
+                <div class="card shadow-lg my-3 p-3 fs-5" style="font-size:13px !important;">
+                    <span class="bg-mycolor2 badge text-light position-absolute top-0 start-50 translate-middle"><i class="fa-solid fa-indian-rupee-sign">
+                    </i>{{r.discounted_price}}</span>
+                    
+                    <img src="/{{r.picture}}" class="card-img-top"/>
+                    <h5 class="card-title text-mycolor1 pt-2 fw-bold">{{r.package_name}}</h5>
+                    <b>{{r.title}}</b>
+                    <p class="card-text" style="height: 90px;overflow-y: auto;">{{r.package_info}}</p>
+                    <p class="card-text"><b>Price :</b><i class="fa-solid fa-indian-rupee-sign"></i><s>{{r.price}}</s>23000/- Per Person</p>
+                    <p class="card-text"><small class="badge bg-mycolor2 float-start"><i class="fa-solid fa-calendar"></i>{{r.posted_date}}</small>
+                        <small class="badge bg-mycolor2 float-end">{{r.city}}</small>
+
+                    </p>
+
+                    <a href="/blogger/package?dprice={{r.discounted_price}}&pkg={{r.package_name}}" class="btn bg-mycolor1 text-light w-50">Book Now &rarr;</a>
+
+
+                </div>
+
+            </div>
+            
+
+         <!--end package session-->
+          {% endfor %}
+
+</div>
+
+{% endblock %}

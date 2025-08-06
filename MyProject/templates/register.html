@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    ::placeholder{
+        color:black !important;
+
+    }
+    .form-control{
+        height: 65px;
+        background: white;
+        border:none !important;
+        border-radius: 0px !important;
+
+    }
+</style>
+
+<!--start page heading-->
+
+
+<p class="text-center fs-3 mt-3">REGISTER<b class="text-mycolor1">Now<i class="fa-solid fa-user fa-spin"></i>
+</b></p>
+<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corrupti at recusandae sed voluptate corporis<b class="text-mycolor1">Register</b></p>
+<hr class="w-50 mx=auto"/>
+
+<!--end page heading-->
+<div class="row">
+    <div class="col-sm-6 mx-auto p-5 bg-light mb-3">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" required placeholder="Name" class="form-control mb-3 shadow-lg"/>
+            <input type="email" name="email" required placeholder="Email" class="form-control mb-3 shadow-lg"/>
+            <input type="number" name="mob" required placeholder="Mobile" class="form-control mb-3 shadow-lg"/>
+            <input type="password" name="passwd" required placeholder="Password" class="form-control mb-3 shadow-lg"/>
+            <input type="file" name="fu" required class="form-control mb-3 shadow"/>
+
+            <textarea name="address" class="form-control mb-3 shadow-lg"></textarea>
+            <input type="submit" value="Save" class="form-control bg-mycolor1 btn form-control" style="background: #e91e63 !important;"/>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

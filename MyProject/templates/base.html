@@ -1,0 +1,353 @@
+{% load static %}
+<html>
+
+<head>
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+  <style>
+    #menu {
+      background: transparent !important;
+
+    }
+
+    #menu ul li a {
+      color: white !important;
+    }
+
+    .slider {
+      min-height: 450px;
+      background: linear-gradient(45deg,rgba(0,0,0,.6),rgba(245,0,87,.2)),url("{% static 'images/chow.jpg' %}");
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .bg-mycolor1 {
+      background: #F50057;
+    }
+
+    .bg-mycolor2 {
+      background: #6A1B9A;
+    }
+
+    .text-mycolor1 {
+      color: #AD1457;
+    }
+
+    .text-mycolor2 {
+      color: #4A148C;
+    }
+
+    .ic {
+      color: #F50057;
+      height: 28px;
+      width: 28px;
+      text-align: center;
+      line-height: 28px;
+      border: 1px solid#F50057;
+    }
+
+    .ic:hover {
+      transform: translateY(-5px);
+      transition: .1s;
+      background: #F50057;
+      color: white;
+    }
+
+    .aboutcontent {
+      font-size: 18px;
+    }
+
+    .im {
+      height: 150px;
+    }
+
+    .imgpic {
+      transition: 2s;
+      height: 200px;
+      width: 100%;
+    }
+
+    .imgpic:hover {
+      transform: scale(1.1);
+      transition: 2s;
+    }
+
+    .ufooter {
+      min-height: 250px;
+      background: black;
+
+    }
+
+    .bfooter {
+      height: 50px;
+      background: black;
+    }
+
+    .imgteam {
+      height: 300px;
+
+    }
+
+    .imgabout {
+      height: 250px;
+    }
+
+    .catic {
+      height: 60px;
+      width: 60px;
+      font-size: 30px;
+      border: 1px solid black;
+      border-radius: 7px;
+      line-height: 60px;
+      transition: 2s;
+    }
+
+    .catic:hover {
+      background: red;
+      color: white;
+      transition: 2s;
+    }
+
+    .catimg {
+      height: 130px;
+    }
+
+    .popularcat {
+      border: 0px;
+    }
+
+    .popularcat:hover {
+      transform: scale(1.09);
+      transition: 2s;
+    }
+    .popularimg{
+      height:90px;
+    }
+    .txt{
+      height:50px;
+      margin-bottom:4%;
+      background: transparent !important;
+      border: none !important;
+      border-bottom:2px solid #F50057 !important ;
+      border-radius:0px !important;
+
+    }
+    .ta{
+       height:80px;
+      margin-bottom:4%;
+      background: transparent !important;
+      border: none !important;
+      border-bottom:2px solid white !important ;
+    }
+    ::placeholder{
+      color:grey !important;
+    }
+    .btn1{
+      height: 50px !important;
+      color: white !important;
+    }
+    .contactimg{
+      height: 450px;
+    }
+    .login{
+      background: rgba(0,0,0,.3);
+      backdrop-filter:blur(5px);
+    }
+    .serviceic{
+      height: 50px;
+      width: 50px;
+      font-size: 25px;
+      line-height: 50px;
+      color:black;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!--start header-->
+    <div class="row header">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10 py-4">
+        <div class="row">
+          <div class="col-sm-3">
+            JOURNEY<b class="text-mycolor1">HIVE<i class="fa-solid fa-graduation-cap"></i></b>
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <i class="fa-solid fa-envelope ic"></i>
+              Mail Us</b><br/>
+            vidya@gmail.com
+          </div>
+          <div class="col-sm-2">
+            <b>
+              <i class="fa-solid fa-phone ic"></i>
+              Call Us</b><br/>
+            5456465777
+          </div>
+          <div class="col-sm-3 pt-3">
+            <i class="fa-brands fa-square-facebook ic"></i>
+            <i class="fa-brands fa-square-youtube ic"></i>
+            <i class="fa-brands fa-linkedin ic"></i>
+            <i class="fa-brands fa-instagram ic"></i>
+            <i class="fa-brands fa-square-twitter ic"></i>
+          </div>
+         <div class="col-sm-2">
+          <a href="/admin/" class="bg-mycolor1 btn text-light"><i class="fa-solid fa-key"></i>Admin Login</a>
+           
+          </div>
+        </div>
+         
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+
+  <!--end header-->
+
+  <!--start menu-->
+  <div class="row menu bg-mycolor1">
+    <div class="col-sm-8 mx-auto">
+
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                
+                <a class="nav-link active" aria-current="page" href="/index/"><i class="fa-solid fa-house"></i>Home</a>
+                 <li class="nav-item">
+                <a class="nav-link" href="/package/"><i class="fa-solid fa-box"></i>Package</a>
+              </li>
+               
+               <li class="nav-item">
+                <a class="nav-link" href="/register/"><i class="fa-solid fa-registered"></i>Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/category/"><i class="fa-solid fa-suitcase"></i>Traveling Blogs</a>
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link" href="/aboutus/"><i class="fa-solid fa-address-card"></i>About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/services/"><i class="fa-brands fa-servicestack"></i>Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/gallery/"><i class="fa-solid fa-image"></i> Picture Gallery</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/team/"><i class="fa-solid fa-user-group"></i>Team</a>
+              </li>
+               
+              <li class="nav-item">
+                <a class="nav-link" href="/contact/"><i class="fa-solid fa-address-book"></i>Contact & Support</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login/"><i class="fa-solid fa-key"></i>User Login</a>
+              </li>
+             
+
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Dropdown
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+
+              </li> -->
+
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li> -->
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+
+
+
+
+    </div> 
+   </div>
+  <!--end menu-->
+
+  
+  <div class="row">
+    <div class="col-sm-12" style="min-height: 450px;">
+
+  
+
+  {% block content %}
+
+  {% endblock %}
+  </div>
+
+  </div>
+
+  
+  <div class="row team"></div>
+  <div class="row ufooter">
+    <div class="col-sm-10 mx-auto">
+      <div class="row p-4">
+        <div class="col-sm-3 text-light ps-3">
+          <h5>About Website</h5>
+          <p style="font-size:12px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, iusto
+            laboriosam similique dolorum voluptas laborum. Cupiditate accusantium accusamus consectetur vero consequatur
+            eos earum necessitatibus quae neque provident, fugiat ex temporibus.</p>
+        </div>
+        <div class="col-sm-3 text-light ps-5">
+          <p><i class="fa-solid fa-arrow-right"></i>Home</p>
+          <p><i class="fa-solid fa-arrow-right"></i>About Us</p>
+          <p><i class="fa-solid fa-arrow-right"></i>Our Team</p>
+          <p><i class="fa-solid fa-arrow-right"></i>Our Services</p>
+          <p><i class="fa-solid fa-arrow-right"></i>Contact Us</p>
+
+        </div>
+        <div class="col-sm-3 text-light ps-5">
+          <p><i class="fa-solid fa-arrow-right"></i>Home</p>
+          <p><i class="fa-solid fa-arrow-right"></i>About Us</p>
+          <p><i class="fa-solid fa-arrow-right"></i>Our Team</p>
+          <p><i class="fa-solid fa-arrow-right"></i>Our Services</p>
+          <p><i class="fa-solid fa-arrow-right"></i>Contact Us</p>
+
+        </div>
+        <div class="col-sm-3 text-light">
+          <h5>Get in Touch</h5>
+          <p><i class="fa-solid fa-location-dot"></i> Sec. 5 Vikas Nagar, Ring Road, Lucknow 226022</p>
+          <p><i class="fa-solid fa-phone"></i> 91-9876543211</p>
+          <p><i class="fa-solid fa-phone"></i> 91-9876522456</p>
+          <p><i class="fa-brands fa-facebook"></i></p>
+          <p><i class="fa-brands fa-instagram"></i></p>
+          <p><i class="fa-brands fa-whatsapp"></i></p>
+          <p><i class="fa-brands fa-twitter"></i></p>
+          <p><i class="fa-brands fa-linkedin"></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row bfooter text-light text-center">
+    <span style="line-height:50px;">Developed by Vidya &copy;<a href="https://www.techpile.in" target="_blank">Vidya
+        Chaurasia</a></span>
+  </div>
+  </div>
+  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+
+</html>

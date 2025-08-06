@@ -1,0 +1,71 @@
+{% extends 'blogger_base.html' %}
+{% load static %}
+{% block content %}
+{% if not request.session.email %}
+<script>
+alert('you have to login first...');location.href="/login/"
+</script>
+{% endif %}
+
+
+<style>
+    .form-control{
+        height: 60px;
+        margin-bottom:15px;
+        background: #ececec;
+
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-9" style="height: 700px;overflow-y:auto;">
+        <div class="row">
+            {% for r in packages %}
+            <!--start package session-->
+            <div class="col-sm-4">
+                <div class="card shadow-lg my-3 p-3 fs-5" style="font-size:13px !important;">
+                    <span class="bg-mycolor2 badge text-light position-absolute top-0 start-50 translate-middle"><i class="fa-solid fa-indian-rupee-sign">
+                    </i>{{r.discounted_price}}</span>
+                    
+                    <img src="/{{r.picture}}" class="card-img-top"/>
+                    <h5 class="card-title">{{r.package_name}}</h5>
+                    <b>{{r.title}}</b>
+                    <p class="card-text" style="height: 90px;overflow-y: auto;">{{r.package_info}}</p>
+                    <p class="card-text"><b>Price :</b><i class="fa-solid fa-indian-rupee-sign"></i><s>{{r.price}}</s>23000/- Per Person</p>
+                    <p class="card-text"><small class="badge bg-mycolor2 float-start"><i class="fa-solid fa-calendar"></i>{{r.posted_date}}</small>
+                        <small class="badge bg-mycolor2 float-end">{{r.city}}</small>
+
+                    </p>
+
+                    <a href="/blogger/package?dprice={{r.discounted_price}}&pkg={{r.package_name}}" class="btn bg-mycolor1 text-light w-50">Book Now &rarr;</a>
+
+
+                </div>
+
+            </div>
+            
+
+         <!--end package session-->
+          {% endfor %}
+                  </div>
+    </div>
+    <div class="col-sm-3">
+        <p class="fs-5 text-uppercase text-center mt-5">Book<b class="text-mycolor1"> Traveling Package</b></p>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" class="form-control" value="{{package}}" readonly/>
+            <input type="text" class="form-control" value="{{dprice}}" readonly/>
+            <input type="number" name="npeople" class="form-control" placeholder="No of People"/> 
+            <input type="number" name="ndays" class="form-control" placeholder="No of Days"/>
+            <input type="date" name="bdate" class="form-control"/>
+            <input type="time" name="btime" class="form-control"/>
+            <input type="submit" class="form-control" style="background: #e4a11b;" value="Save"/>
+            
+            
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}

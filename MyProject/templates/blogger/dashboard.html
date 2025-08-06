@@ -1,0 +1,104 @@
+{% extends 'blogger_base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row py-2 bg-light">
+    <p class="text-center fs-3">Welcome,<b class="text-mycolor1">Techpile</b></p>
+    <div class="col-sm-10 mx-auto">
+        <div class="row py-3">
+
+            <!--Dashboard Card start-->
+            <div class="col-sm-3 mb-5" id="dash">
+                <a href="/blogger/dashboard/">
+                <div class="card mx-auto shadow-lg border border-0 py-4 w-75 dashcard">
+
+                    <div class="text-center"><i class="fa-solid fa-users dashic" style="background: #FFCDD2;"></i></div>
+                    <p class="text-center mt-3"><b>Dashboard</b></p>
+                     
+                </div>
+                </a>
+            </div>
+            <!--Dashboard Card end-->
+             <!--Dashboard Card start-->
+            <div class="col-sm-3 mb-5" id="dash">
+                <a href="/blogger/package/">
+                <div class="card mx-auto shadow-lg border border-0 py-4 w-75 dashcard">
+
+                    <div class="text-center"><i class="fa-solid fa-user dashic" style="background: #F8BBD0;"></i></div>
+                    <p class="text-center mt-3"><b>Traveling Package</b></p> 
+                </div>
+                </a>
+            </div>
+            <!--Dashboard Card end-->
+             <!--Dashboard Card start-->
+            <div class="col-sm-3 mb-5" id="dash">
+                <a href="/blogger/myblogs/">
+
+                <div class="card mx-auto shadow-lg border border-0 py-4 w-75 dashcard">
+
+                    <div class="text-center"><i class="fa-solid fa-user dashic" style="background: #E1BEE7;"></i></div>
+                    <p class="text-center mt-3"><b>My Blogs</b></p> 
+                </div>
+                </a>
+            </div>
+            <!--Dashboard Card end-->
+             <!--Dashboard Card start-->
+            <div class="col-sm-3 mb-5" id="dash">
+                <a href="/blogger/history/">
+                
+                <div class="card mx-auto shadow-lg border border-0 py-4 w-75 dashcard">
+
+                    <div class="text-center"><i class="fa-solid fa-user dashic" style="background: #C5CAE9;"></i></div>
+                    <p class="text-center mt-3"><b>Booking History</b></p> 
+                </div>
+                </a>
+            </div>
+            <!--Dashboard Card end-->
+            <!--Dashboard Card start-->
+            <div class="col-sm-3" mb-5 id="dash">
+                <a href="/blogger/profile/">
+                <div class="card mx-auto shadow-lg border border-0 py-4 w-75 dashcard">
+
+                    <div class="text-center"><i class="fa-solid fa-users dashic" style="background:#BBDEFB;"></i></div>
+                    <p class="text-center mt-3"><b>My Profile</b></p> 
+                </div>
+                </a>
+            </div>
+            <!--Dashboard Card end-->
+             <!--Dashboard Card start-->
+            <div class="col-sm-3" id="dash">
+                 <a href="/blogger/logout/">
+                <div class="card mx-auto shadow-lg border border-0 py-4 w-75 dashcard">
+
+                    <div class="text-center"><i class="fa-solid fa-users dashic" style="background: #BBDEFB;"></i></div>
+                    <p class="text-center mt-3"><b>Logout</b></p> 
+                </div>
+                </a>
+            </div>
+            <!--Dashboard Card end-->
+             <!--Dashboard Card start-->
+            <div class="col-sm-3" id="dash">
+                 <a href="#">
+                <div class="card mx-auto shadow-lg border border-0 py-4 w-75 dashcard">
+
+                    <div class="text-center"><i class="fa-solid fa-users dashic" style="background: #B2EBF2;"></i></div>
+                    <p class="text-center mt-3"><b>Bookings</b></p> 
+                </div>
+                </a>
+            </div>
+            <!--Dashboard Card end-->
+             <!--Dashboard Card start-->
+            <div class="col-sm-3" id="dash">
+                <a href="#">
+                <div class="card mx-auto shadow-lg border border-0 py-4 w-75 dashcard">
+
+                    <div class="text-center"><i class="fa-solid fa-users dashic" style="background: #B3E5FC;"></i></div>
+                    <p class="text-center mt-3"><b>Bookings</b></p> 
+                </div>
+                </a>
+            </div>
+            <!--Dashboard Card end-->
+        </div>
+    </div>
+</div>
+{% endblock %}

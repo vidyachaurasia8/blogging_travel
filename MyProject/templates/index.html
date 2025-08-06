@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row slider">
+    <div class="col-sm-10 mx-auto">
+      <div class="row">
+        <div class="col-sm-7 pt-5">
+          <div class="fs-1 text-center text-light text-uppercase mt-5">Welcome to TECH<b class="text-mycolor1">HUB<i class="fa-solid fa-graduation-cap"></i></b></div>
+          <div class="text-center text-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt quibusdam quo ad consectetur quaerat dolorem officiis nam veritatis, architecto, amet culpa.</div>
+          <a href="#" class="btn bg-mycolor1 text-light mx-auto d-block w-25 mt-5 rounded-pill">Register Now</a>
+        </div>
+        <!---->
+            <div class="col-sm-5 login my-5 p-5">
+              <span class="position-absolute top-0 translate-middle start-50 bg-mycolor1 py-2 px-3 fs-4 text-light rounded-pill border border-2 border-light">Contact Us</span>
+                
+              <form method="post">
+                {% csrf_token %}
+                <input type="text" class="form-control txt" required placeholder="Name.." name="name"/>
+
+                  <input type="email" class="form-control txt" required placeholder="Email.." name="email"/>
+
+                    <input type="number" class="form-control txt" required placeholder="mobile.." name="mob"/>
+
+                    <textarea class="form-control ta" required placeholder="Message" name="msg"></textarea>
+
+                    <input type="submit" value="Save" class="form-control bg-mycolor1 btn1"/>
+              </form>
+            </div>
+            <!---->
+      </div>
+    </div>
+
+  </div>
+
+  <!--start package section-->
+<!--start page heading-->
+<hr class="w-25 mx-auto"/>
+
+<p class="text-center fs-3 mt-3">Our<b class="text-mycolor1"> Top Packages<i class="fa-solid fa-user fa-spin"></i>
+</b></p>
+<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corrupti at recusandae sed voluptate corporis<b class="text-mycolor1">Register</b></p>
+<hr class="w-50 mx=auto"/>
+
+<!--end page heading-->
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row">
+            {% for r in packages %}
+
+            <!--start package session-->
+            <div class="col-sm-3">
+                <div class="card shadow-lg my-3 p-3 fs-5" style="text-align: justify !important;">
+                    <span class="bg-mycolor2 badge text-light position-absolute top-0 start-50 translate-middle"><i class="fa-solid fa-indian-rupee-sign">
+                    </i>{{r.discounted_price}}</span>
+                    
+                    <img src="/{{r.picture}}" class="card-img-top"/>
+                    <h5 class="card-title">{{r.package_name}}</h5>
+                    <b>{{r.title}}</b>
+                    <p class="card-text" style="height: 150px;overflow-y: auto;">{{r.package_info}}</p>
+                    <p class="card-text"><b>Price :</b><i class="fa-solid fa-indian-rupee-sign"></i><s>{{r.price}}</s>23000/- Per Person</p>
+                    <p class="card-text"><small class="badge bg-mycolor2 float-start"><i class="fa-solid fa-calendar"></i>{{r.posted_date}}</small>
+                        <small class="badge bg-mycolor2 float-end">{{r.city}}</small>
+
+                    </p>
+
+                    <a href="/blogger/package?dprice={{r.discounted_price}}&pkg={{r.package_name}}" class="btn bg-mycolor1 text-light w-50">Book Now &rarr;</a>
+
+
+                </div>
+
+            </div>
+            
+
+         <!--end package session-->
+          {% endfor %}
+                  </div>
+    </div>
+  </div>
+
+  <!--start package section-->
+  
+  <!--aboutus start-->
+  <div class="row aboutus">
+    <p class="text-center fs-3">about<b class="text-mycolor1">us</b></p>
+    <div class="col-sm-10 mx-auto">
+      <div class="row">
+        <div class="col-sm-6">
+          <img src="{% static 'images/san.jpg' %}" class="img-thumbnail w-100 imgabout" />
+        </div>
+        <div class="col-sm-6">
+          <p class="p-3 aboutcontent">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quis ducimus
+            accusamus dolore quod laborum quam consequatur debitis? Eveniet nihil quaerat repellendus fugit
+            necessitatibus eum laboriosam repudiandae ipsam distinctio qui.</p>
+          <p class="px-3 aboutcontent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi magni omnis
+            impedit laboriosam voluptate debitis, natus veritatis eum voluptates quas amet alias odio voluptas eveniet
+            in aperiam eius tempora magnam!</p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!--aboutus end-->
+  <!--services start-->
+  <div class="row services py-3">
+    <p class="text-center fs-3">Our<b class="text-mycolor1">Services</b></p>
+    <div class="col-sm-10 mx-auto">
+      <div class="row">
+        <!--start card-->
+        <div class="col-sm-3">
+          <div class="card mx-auto shadow-lg">
+            <img src="{% static 'images/piz.jpg' %}" class="card-img-top img-fluid im" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Summer Training</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
+                content.</p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+        <!--card end-->
+        <!--start card-->
+        <div class="col-sm-3">
+          <div class="card mx-auto shadow-lg">
+            <img src="{% static 'images/piz.jpg' %}" class="card-img-top img-fluid im" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Summer Training</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
+                content.</p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+        <!--card end-->
+        <!--start card-->
+        <div class="col-sm-3">
+          <div class="card mx-auto shadow-lg">
+            <img src="{% static 'images/piz.jpg' %}" class="card-img-top img-fluid im" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Summer Training</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
+                content.</p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+        <!--card end-->
+        <!--start card-->
+        <div class="col-sm-3">
+          <div class="card mx-auto shadow-lg">
+            <img src="{% static 'images/piz.jpg' %}" class="card-img-top img-fluid im" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Summer Training</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
+                content.</p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+        <!--card end-->
+      </div>
+    </div>
+  </div>
+  <!--services end-->
+  <div class="row product"></div>
+  <div class="row intro"></div>
+  <div class="row contactus"></div>
+
+  {% endblock %}

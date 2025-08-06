@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .form-control,.btn1{
+        height:60px;
+        background: #f3f3f3 !important;
+    }
+    .a{
+        height: 30px;
+        width: 670px;
+    }
+</style>
+
+<div class="row mt-3">
+    <div class="text-center fs-3">SIGN<b class="text-mycolor1">IN
+        <i class="fa-solid fa-phone fa-spin"></i>
+    </b>
+    <hr class="w-25 mx-auto"/>
+
+ </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 mx-auto p-5 bg-light">
+        <form method="post">
+            {% csrf_token %}
+            <input type="email" name="email" required class="form-control mb-3 shadow-lg" placeholder="Email.."/>
+             <input type="password" name="passwd" required class="form-control mb-3 shadow-lg" placeholder="Password.."/>
+              <input type="submit" value="LOGIN" class="btn1 mb-3 shadow-lg a" style="background: #880e4f !important;"/>
+        </form>
+        <a href="/register/" class="fs-5 text-mycolor1 fw-bold float-end">If you are not registered ! Register Here</a>
+    </div>
+</div>
+
+
+{% endblock %}
